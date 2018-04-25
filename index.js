@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({'extended': 'true'}));            // parse applic
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
 app.use(methodOverride());
-app.use(opbeat.middleware.express())
+app.use(opbeat.middleware.express());
 
 require('./routes/routes')(app);
 
@@ -44,4 +44,4 @@ if (process.env.NODE_ENV === "test") {
         console.log('Mongoose default connection open to ' + config.db);
     });
 }
-module.exports = app
+module.exports = app;
