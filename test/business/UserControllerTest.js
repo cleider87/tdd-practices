@@ -106,10 +106,10 @@ describe('UserController TestCases', function () {
                 email: "cleider87@gmail.com"
             }));
             var User = userMock.object;
-            var expectedResult = { status: true };
-            
+            var expectedResult = {status: true};
+
             userMock.expects('save').withArgs({_id: 12345}).yields(null, expectedResult);
-            
+
             User.save({_id: 12345}, function (err, result) {
                 userMock.verify();
                 userMock.restore();
@@ -125,10 +125,10 @@ describe('UserController TestCases', function () {
             }));
             var User = userMock.object;
             var expectedResult = {status: false};
-            
+
             userMock.expects('save').withArgs({_id: 12345}).yields(expectedResult, null);
-            
-            User.save({_id: 12345},function (err, result) {
+
+            User.save({_id: 12345}, function (err, result) {
                 userMock.verify();
                 userMock.restore();
                 expect(err.status).to.not.be.true;
@@ -137,7 +137,7 @@ describe('UserController TestCases', function () {
         });
 
     });
-    
+
     describe('Delete an User', function () {
         it('Should delete user of gived id', function (done) {
             var userMock = sinon.mock(UserModel);
