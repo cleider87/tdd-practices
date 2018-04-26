@@ -4,7 +4,7 @@
   "description": "TDD Practices",
   "scripts": {
     "start": "node index.js",
-    "test": "istanbul cover mocha && codecov"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha && codecov"
   },
   "bin": {
     "codecov": "./bin/codecov"
