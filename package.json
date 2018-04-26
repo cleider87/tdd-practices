@@ -4,7 +4,8 @@
   "description": "TDD Practices",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha test/index.js"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha && codecov",
+    "report-coverage": "codecov"
   },
   "main": "index.js",
   "keywords": [
@@ -21,7 +22,6 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "method-override": "^2.3.10",
     "mongoose": "^5.0.16",
     "morgan": "^1.9.0",
     "opbeat": "^4.17.0"
