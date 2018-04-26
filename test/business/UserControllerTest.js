@@ -1,8 +1,9 @@
 "use strict";
 
 var should = require('should'),
-        sinon = require('sinon'),
-        mongoose = require('mongoose');
+    sinon = require('sinon'),
+    mongoose = require('mongoose');
+    
 require('sinon-mongoose');
 
 var chai = require('chai');
@@ -26,6 +27,7 @@ describe('UserController TestCases', function () {
                     email: "cleider87@gmail.com"
                 }
             }
+            
             var res = {}, next = {};
             var UserController = require('../../business/UserController')(UserTest);
             UserController.create(req, res, next);

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha && codecov",
-    "test": "mocha test/index.js"
+    "test": "mocha test/test.js "
   },
   "bin": {
     "codecov": "./bin/codecov"
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.1.1",
     "should": "^13.2.1",
