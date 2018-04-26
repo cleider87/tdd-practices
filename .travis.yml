@@ -9,4 +9,4 @@ install:
   - npm install -g codecov
   - npm install -g istanbul
   - npm install
-  - npm coverage
+  - npm run coverage
