@@ -3,10 +3,12 @@ var Schema = mongoose.Schema;
 
 var UserSchema = Schema({
   user: {
-    type: String
+    type: String,
+    required: true
   },
   email: {
-    type: String
+    type: String,
+    required: true
   },
   created_by: {
     type: Date,

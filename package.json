@@ -4,8 +4,8 @@
   "description": "TDD Practices",
   "scripts": {
     "start": "node index.js",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha && codecov",
-    "test": "mocha test/index.js"
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --exit && codecov ",
+    "test": "mocha test/test.js --exit"
   },
   "bin": {
     "codecov": "./bin/codecov"
@@ -35,10 +35,14 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.1.1",
+    "mongoose-mock": "^0.4.0",
+    "proxyquire": "^2.0.1",
     "should": "^13.2.1",
     "sinon": "^4.5.0",
+    "sinon-chai": "^3.0.0",
     "sinon-mongoose": "^2.1.1"
   }
 }
