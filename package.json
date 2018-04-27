@@ -4,8 +4,8 @@
   "description": "TDD Practices",
   "scripts": {
     "start": "node index.js",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --exit && codecov ",
-    "test": "mocha test/test.js --exit"
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha && codecov ",
+    "test": "mocha test/test.js"
   },
   "bin": {
     "codecov": "./bin/codecov"

@@ -4,9 +4,13 @@ node_js:
 codecov --token=: 4ba9c6a7-b0fe-4540-a784-411a79e77d83
 after_success:
 - ./bin/codecov -e TRAVIS_NODE_VERSION
+before_script:
+  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 install:
   - npm install -g mocha
   - npm install -g codecov
   - npm install -g istanbul
   - npm install
   - npm run coverage
+services:
+  - mongodb
