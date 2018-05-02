@@ -1,36 +1,33 @@
-var chai = require('chai');
+var chai = require('chai')
 
-var chaiHttp = require('chai-http');
+var chaiHttp = require('chai-http')
 
-process.env.NODE_ENV = "test";
+process.env.NODE_ENV = 'test'
 
-var app = require('../server');
+var app = require('../server')
 
-var expect = chai.expect;
+var expect = chai.expect
 
-chai.use(chaiHttp);
+chai.use(chaiHttp)
 
 describe('Routes TestCases', function () {
+  describe('/api/users', function () {
+    it('Responds with status 200', function (done) {
+      chai.request(app)
+        .get('/api/users')
+        .end(function (err, res) {
+          expect(res).to.have.status(200)
+          done()
+        })
+    })
 
-    describe('/api/users', function () {
-        it('Responds with status 200', function (done) {
-            chai.request(app)
-                    .get('/api/users')
-                    .end(function (err, res) {
-                        expect(res).to.have.status(200);
-                        done();
-                    });
-        });
-
-        it('Responds with status 404', function (done) {
-            chai.request(app)
-                    .get('/api/user')
-                    .end(function (err, res) {
-                        expect(res).to.have.status(404);
-                        done();
-                    });
-        });
-
-    });
-
-});
+    it('Responds with status 404', function (done) {
+      chai.request(app)
+        .get('/api/user')
+        .end(function (err, res) {
+          expect(res).to.have.status(404)
+          done()
+        })
+    })
+  })
+})

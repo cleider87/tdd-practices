@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var UserSchema = Schema({
   user: {
@@ -14,8 +14,8 @@ var UserSchema = Schema({
     type: Date,
     default: Date.now
   }
-});
+})
 
-var UserModel = mongoose.model('User', UserSchema);
+var UserModel = mongoose.model('User', UserSchema)
 
-module.exports = UserModel;
+module.exports = UserModel
